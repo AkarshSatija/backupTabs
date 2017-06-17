@@ -11,7 +11,8 @@
   },
   "default_locale": "en",
   "background": {
-    "page": "src/bg/background.html",
+   // "page": "src/bg/background.html",
+    "scripts": ["/src/bg/chrome-get-urls-from-tabs-in-windows.js", "/src/bg/background2.js"],
     "persistent": true
   },
   "browser_action": {
@@ -19,8 +20,9 @@
     "default_title": "browser action demo",
     "default_popup": "src/browser_action/browser_action.html"
   },
-  "permissions": [
+  "permissions": /*[
     "bookmarks",
+    "storage",
     "chrome://favicon/",
     "clipboardRead",
     "clipboardWrite",
@@ -36,8 +38,14 @@
     "notifications",
     "tabs",
     "geolocation",
-    "*"
-  ],
+    "https://*\/*",
+    "http://google.com/*"
+  ]*/
+  [
+    "tabs",
+    "storage"
+  ]
+  ,
   "omnibox": {
     "keyword": "extensionizr"
   },
